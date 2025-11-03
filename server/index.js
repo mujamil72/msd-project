@@ -27,7 +27,7 @@ app.use(helmet())
 app.use(morgan("dev"))
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
+    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://msd-project-frontend.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
@@ -58,6 +58,11 @@ app.use("/api/dashboard", newAnalyticsRoutes)
 app.use("/api/itinerary", itineraryRoutes)
 app.use("/api/transport", transportRoutes)
 app.use("/api/accommodation", accommodationRoutes)
+
+// Root route
+app.get("/", (req, res) => {
+  res.json({ message: "Trip Budget Planner API", status: "running" })
+})
 
 // Health check
 app.get("/api/health", (req, res) => {
