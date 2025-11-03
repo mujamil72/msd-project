@@ -170,6 +170,7 @@ export default function TripsList() {
                   <option value="EUR">EUR</option>
                   <option value="GBP">GBP</option>
                   <option value="JPY">JPY</option>
+                  <option value="INR">INR</option>
                   <option value="CAD">CAD</option>
                   <option value="AUD">AUD</option>
                 </select>
