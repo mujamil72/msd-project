@@ -140,7 +140,8 @@ export default function Dashboard() {
             { title: 'View Analytics', desc: 'See detailed spending insights', icon: '📊', color: 'from-purple-500 to-purple-600', action: () => navigate('/reports') },
             { title: 'Invite Friends', desc: 'Collaborate with travel buddies', icon: '👥', color: 'from-pink-500 to-rose-600', action: () => navigate('/trips') },
             { title: 'Plan Route', desc: 'Map destinations and routes', icon: '🗺️', color: 'from-indigo-500 to-blue-600', action: () => navigate('/map-route') },
-            { title: 'Manage Transport', desc: 'Book flights, trains & more', icon: '🚗', color: 'from-orange-500 to-red-600', action: () => navigate('/transport') }
+            { title: 'Manage Transport', desc: 'Book flights, trains & more', icon: '🚗', color: 'from-orange-500 to-red-600', action: () => navigate('/transport') },
+            { title: 'Book Hotels', desc: 'Manage accommodation bookings', icon: '🏨', color: 'from-teal-500 to-cyan-600', action: () => navigate('/accommodation') }
           ].map((action, index) => (
             <button
               key={index}
