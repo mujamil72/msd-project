@@ -59,6 +59,11 @@ app.use("/api/itinerary", itineraryRoutes)
 app.use("/api/transport", transportRoutes)
 app.use("/api/accommodation", accommodationRoutes)
 
+// Legacy routes without /api prefix for compatibility
+app.use("/auth", authRoutes)
+app.use("/trips", tripRoutes)
+app.use("/expenses", expenseRoutes)
+
 // Root route
 app.get("/", (req, res) => {
   res.json({ message: "Trip Budget Planner API", status: "running" })
