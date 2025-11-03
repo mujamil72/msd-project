@@ -80,48 +80,50 @@ export default function Dashboard() {
       </div>
 
       <header className="relative z-10 bg-white/5 backdrop-blur-xl border-b border-white/10 shadow-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex justify-between items-center">
-          <div>
-            <h1 className="text-4xl font-black text-white mb-2 drop-shadow-lg">
-              🏠 Dashboard
-            </h1>
-            <p className="text-white/80 text-lg">Welcome back, <span className="font-bold text-blue-300">{user?.name}</span></p>
-          </div>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => navigate("/profile")}
-              className="text-white/90 hover:text-white font-medium px-6 py-3 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/20"
-            >
-              Profile
-            </button>
-            <button
-              onClick={handleLogout}
-              className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              Logout
-            </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 drop-shadow-lg">
+                🏠 Dashboard
+              </h1>
+              <p className="text-white/80 text-sm sm:text-base lg:text-lg">Welcome back, <span className="font-bold text-blue-300">{user?.name}</span></p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+              <button
+                onClick={() => navigate("/profile")}
+                className="text-white/90 hover:text-white font-medium px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-white/10 transition-all duration-300 backdrop-blur-sm border border-white/20 text-sm sm:text-base text-center"
+              >
+                Profile
+              </button>
+              <button
+                onClick={handleLogout}
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-xl text-sm sm:text-base text-center"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
       <main className="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-12">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-12 max-w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-full">
           {[
             { label: 'Total Trips', value: stats.totalTrips, icon: '✈️', color: 'from-blue-500 to-cyan-500' },
             { label: 'Total Spent', value: `$${stats.totalSpent.toLocaleString()}`, icon: '💰', color: 'from-green-500 to-emerald-500' },
             { label: 'Active Trips', value: stats.activeTrips, icon: '🎯', color: 'from-purple-500 to-pink-500' },
             { label: 'Upcoming', value: stats.upcomingTrips, icon: '📅', color: 'from-orange-500 to-red-500' }
           ].map((stat, index) => (
-            <div key={index} className="group bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20 hover:border-white/30 hover:bg-white/15 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+            <div key={index} className="group bg-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 border border-white/20 hover:border-white/30 hover:bg-white/15 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <p className="text-white/80 text-sm font-bold mb-3 uppercase tracking-wider">{stat.label}</p>
-                  <p className={`text-4xl font-black bg-gradient-to-r ${stat.color} text-transparent bg-clip-text drop-shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <p className="text-white/80 text-xs sm:text-sm font-bold mb-2 sm:mb-3 uppercase tracking-wider">{stat.label}</p>
+                  <p className={`text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r ${stat.color} text-transparent bg-clip-text drop-shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {stat.value}
                   </p>
                 </div>
-                <div className={`text-4xl p-4 rounded-2xl bg-gradient-to-r ${stat.color} bg-opacity-20 group-hover:scale-125 transition-transform duration-300`}>
+                <div className={`text-2xl sm:text-3xl lg:text-4xl p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-r ${stat.color} bg-opacity-20 group-hover:scale-125 transition-transform duration-300`}>
                   {stat.icon}
                 </div>
               </div>
@@ -131,7 +133,7 @@ export default function Dashboard() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {[
             { title: 'Plan New Trip', desc: 'Create and manage new adventures', icon: '✈️', color: 'from-blue-500 to-blue-600', action: () => navigate('/trips') },
             { title: 'Track Expenses', desc: 'Add and manage trip expenses', icon: '💸', color: 'from-green-500 to-green-600', action: () => setShowAddExpense(true) },
@@ -143,12 +145,12 @@ export default function Dashboard() {
             <button
               key={index}
               onClick={action.action}
-              className={`group bg-gradient-to-br ${action.color} rounded-2xl shadow-xl p-6 hover:shadow-2xl hover:scale-105 transition-all duration-500 text-left relative overflow-hidden`}
+              className={`group bg-gradient-to-br ${action.color} rounded-xl sm:rounded-2xl shadow-xl p-4 sm:p-6 hover:shadow-2xl hover:scale-105 transition-all duration-500 text-left relative overflow-hidden`}
             >
               <div className="relative z-10">
-                <div className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">{action.icon}</div>
-                <h3 className="text-lg font-bold mb-2 text-white drop-shadow-lg">{action.title}</h3>
-                <p className="text-white/90 text-sm leading-relaxed">{action.desc}</p>
+                <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 group-hover:scale-125 transition-transform duration-300">{action.icon}</div>
+                <h3 className="text-sm sm:text-base lg:text-lg font-bold mb-1 sm:mb-2 text-white drop-shadow-lg">{action.title}</h3>
+                <p className="text-white/90 text-xs sm:text-sm leading-relaxed">{action.desc}</p>
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </button>

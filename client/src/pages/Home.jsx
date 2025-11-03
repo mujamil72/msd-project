@@ -65,15 +65,15 @@ export default function Home() {
 
 
       {/* Enhanced Hero Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           <div className={`transition-all duration-1500 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-            <div className="mb-6">
-              <span className="inline-block bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text text-sm font-bold uppercase tracking-wider mb-4 animate-pulse">
+            <div className="mb-4 sm:mb-6">
+              <span className="inline-block bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 animate-pulse">
                 ✨ Smart Travel Finance
               </span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-6 sm:mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-blue-100 to-white text-transparent bg-clip-text drop-shadow-2xl">
                 Plan Your Trip,
               </span>
@@ -82,7 +82,7 @@ export default function Home() {
                 Split the Costs
               </span>
             </h1>
-            <p className="text-2xl text-white/95 mb-10 leading-relaxed drop-shadow-lg font-light">
+            <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/95 mb-8 sm:mb-10 leading-relaxed drop-shadow-lg font-light">
               Travel with friends without the financial hassle. Track expenses, split bills automatically, and get
               detailed analytics of who owes whom.
             </p>
@@ -96,11 +96,11 @@ export default function Home() {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
               {user ? (
                 <button
                   onClick={() => navigate("/trips")}
-                  className="group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm relative overflow-hidden"
+                  className="group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm relative overflow-hidden"
                 >
                   <span className="relative z-10">My Trips 🚀</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -109,14 +109,14 @@ export default function Home() {
                 <>
                   <button
                     onClick={() => navigate("/register")}
-                    className="group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm relative overflow-hidden"
+                    className="group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl backdrop-blur-sm relative overflow-hidden"
                   >
                     <span className="relative z-10">Get Started Free 🚀</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                   </button>
                   <button
                     onClick={() => navigate("/login")}
-                    className="border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 backdrop-blur-sm hover:shadow-xl"
+                    className="border-2 border-white/30 hover:border-white text-white hover:bg-white/10 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg transition-all duration-300 backdrop-blur-sm hover:shadow-xl"
                   >
                     Sign In
                   </button>
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className={`hidden md:block transition-all duration-1500 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+          <div className={`hidden lg:block transition-all duration-1500 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
             <div className="relative group">
               {/* Main image card */}
               <div 
@@ -186,7 +186,7 @@ export default function Home() {
             Everything you need to manage travel expenses with friends
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 icon: '💰',
@@ -233,13 +233,13 @@ export default function Home() {
             ].map((feature, index) => (
               <div 
                 key={index}
-                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-white/30 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl animate-fade-in-up`}
+                className={`group bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-6 sm:p-8 hover:border-white/30 hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl animate-fade-in-up`}
                 style={{ animationDelay: feature.delay }}
               >
-                <div className={`text-5xl mb-6 p-4 rounded-2xl bg-gradient-to-r ${feature.gradient} bg-opacity-20 inline-block group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-r ${feature.gradient} bg-opacity-20 inline-block group-hover:scale-110 transition-transform duration-300`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4 drop-shadow group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4 drop-shadow group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-blue-200 transition-all duration-300">
                   {feature.title}
                 </h3>
                 <p className="text-white/90 leading-relaxed group-hover:text-white transition-colors duration-300">

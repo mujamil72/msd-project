@@ -78,15 +78,15 @@ export default function Login() {
 
       {/* Login Form */}
       <div className="relative z-10 flex items-center justify-center min-h-[calc(100vh-4rem)] px-4 py-8">
-        <div className={`w-full max-w-lg transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-10 border border-white/20">
+        <div className={`w-full max-w-sm sm:max-w-md lg:max-w-lg transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <div className="bg-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10 border border-white/20">
             {/* Header */}
-            <div className="text-center mb-8">
-              <div className="text-6xl mb-4">🔐</div>
-              <h1 className="text-4xl font-black text-white mb-2 drop-shadow-lg">
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">🔐</div>
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 drop-shadow-lg">
                 Welcome Back
               </h1>
-              <p className="text-white/80 text-lg">Sign in to continue your journey</p>
+              <p className="text-white/80 text-sm sm:text-base lg:text-lg">Sign in to continue your journey</p>
             </div>
 
             {error && (
@@ -95,28 +95,28 @@ export default function Login() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+              <div className="space-y-4 sm:space-y-5">
                 <div>
-                  <label className="block text-sm font-bold text-white/90 mb-2">Email Address</label>
+                  <label className="block text-xs sm:text-sm font-bold text-white/90 mb-2">Email Address</label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     placeholder="Enter your email"
-                    className="w-full px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 sm:px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-white/90 mb-2">Password</label>
+                  <label className="block text-xs sm:text-sm font-bold text-white/90 mb-2">Password</label>
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Enter your password"
-                    className="w-full px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 sm:px-5 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg sm:rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="group w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white font-black py-4 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden mt-6"
+                className="group w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white font-black py-3 sm:py-4 rounded-lg sm:rounded-xl text-base sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden mt-6"
               >
                 <span className="relative z-10">
                   {loading ? (
@@ -141,8 +141,8 @@ export default function Login() {
             </form>
 
             {/* Footer */}
-            <div className="mt-6 text-center">
-              <p className="text-white/80">
+            <div className="mt-4 sm:mt-6 text-center">
+              <p className="text-white/80 text-sm sm:text-base">
                 Don't have an account?{" "}
                 <Link 
                   to="/register" 
@@ -152,8 +152,8 @@ export default function Login() {
                 </Link>
               </p>
               
-              <div className="mt-4 pt-4 border-t border-white/20">
-                <p className="text-white/60 text-sm">
+              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/20">
+                <p className="text-white/60 text-xs sm:text-sm">
                   🔒 Your data is secure and encrypted
                 </p>
               </div>
